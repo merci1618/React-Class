@@ -5,8 +5,8 @@ class Subject extends Component {
   render() {
     return (
       <header>
-        <h1>WEB</h1>
-        WORLD WIDE WEB!
+        <h1>{this.props.title}</h1>
+       {this.props.sub}
       </header>
     );
   }
@@ -26,26 +26,13 @@ class Toc extends Component {
   }
 }
 
-class ContentHtml extends Component {
+class Content extends Component {
   render() {
     return(
       <article>
-        <h2>HTML</h2>
-        HTML IS HYPERTEXT MARKUP LANGUAGE.
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">HTML : MDN'S DOGS</a>
-        <button>PUSH</button>
-      </article>
-    );
-  }
-}
-
-class ContentCSS extends Component {
-  render() {
-    return(
-      <article>
-        <h2>CSS</h2>
-        CSS IS CASCADING STYLE SHEETS.
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS : MDN'S DOGS</a>
+        <h2>{this.props.title}</h2>
+        {this.props.desc}
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN'S DOGS</a>
         <button>PUSH</button>
       </article>
     );
@@ -67,14 +54,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Subject></Subject>
+        <Subject title="WEB" sub="WORLD WIDE WEB"></Subject>
+        <Subject title="REACT" sub="FOR UI"></Subject>
         <Toc></Toc>
         <Toc></Toc>
         <Toc></Toc>
         <Toc></Toc>
         <Toc></Toc>
-        <ContentHtml></ContentHtml>
-        <ContentCSS></ContentCSS>
+        <Content title="HTML" desc="HTML IS HYPER TEXT MARKUP LANGUAGE"></Content>
+        <Content title="CSS" desc="CSS IS CASCADING STYLE SHEETS."></Content>
         <Footer></Footer>
       </div>
     );
