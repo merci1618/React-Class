@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {
     console.log('App Render');
-    
+
     var _title, _dese = null;
 
     if(this.state.mode === 'WELCOME!') {
@@ -39,10 +39,20 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Subject 
+        {/* <Subject 
           title={this.state.subject.title} 
           sub={this.state.subject.sub}>
-        </Subject>
+        </Subject> */}
+
+        <header>
+          <h1><a href="/" onClick={function(e) {
+            console.log(e);
+            e.preventDefault();
+            alert('HI?');
+          }}>{this.state.subject.title}</a></h1>
+          {this.state.subject.sub}
+        </header>
+
         <Subject title="REACT" sub="FOR UI"></Subject>
         <Toc data={this.state.contents}></Toc>
         <Content title={_title} desc={_dese}></Content>
